@@ -131,7 +131,32 @@ def plot_workspace(robot, grid_size=300):
             )
 
     # plot the paths connecting q2 and q3 in workspace
-    
+    n_path = 200
+
+    path = np.linspace(q_sol2, q_sol3, n_path)
+
+    path_rho = []
+    path_z = []
+
+    for q in path:
+        T = robot.fkine(q).A
+
+        x = T[0, 3]
+        y = T[1, 3]
+        z = T[2, 3]
+
+        path_rho.append(np.sqrt(x**2 + y**2))
+        path_z.append(z)
+
+    ax.plot(
+        path_rho,
+        path_z,
+        linestyle="--",
+        color="red",
+        linewidth=2.0,
+        label=r"$q_2 \rightarrow q_3$"
+    )
+
 
     ax.set_xlabel(r"$\rho=\sqrt{x^2+y^2}$")
     ax.set_ylabel(r"$z$")
