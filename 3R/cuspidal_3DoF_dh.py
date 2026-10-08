@@ -39,7 +39,7 @@ q2 = np.array([-0.9, -0.7, 2.5])
 q3 = np.array([-2.9, -3, -0.2])
 q4 = np.array([0.2, -0.3, -1.9])
 
-T = robot.fkine(q2)
+T = robot.fkine(q1)
 
 print(f"end-effector pose:\n {T}")
 print("Position:", T.t)
@@ -51,7 +51,7 @@ print("Rotation:\n", T.R)
 # print(f"Geometric Jacobian Matrix:\n {J}")
 
 robot.plot(
-    q2,
+    q1,
     block=True,
     backend="pyplot",
 )
