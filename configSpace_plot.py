@@ -35,7 +35,6 @@ q_sol2 = np.array([-0.9, -0.7, 2.5])
 q_sol3 = np.array([-2.9, -3.0, -0.2])
 q_sol4 = np.array([0.2, -0.3, -1.9])
 
-
 def plot_configSpace(robot):
     theta2_range = np.linspace(-np.pi, np.pi, 40)
     theta3_range = np.linspace(-np.pi, np.pi, 40)
@@ -91,6 +90,16 @@ def plot_configSpace(robot):
             linewidths=2,
             label=fr"$q_{{{index}}}$",
         )
+
+    # plot a dashed line between q2 and q3
+    plt.plot(
+        [q_sol2[1], q_sol3[1]],  # theta2 coordinates
+        [q_sol2[2], q_sol3[2]],  # theta3 coordinates
+        linestyle="--",
+        color="red",
+        linewidth=1.5,
+        label=r"$q_2 \rightarrow q_3$",
+    )
 
     plt.axhline(0.0, color="black", linewidth=1)
     plt.axvline(0.0, color="black", linewidth=1)
