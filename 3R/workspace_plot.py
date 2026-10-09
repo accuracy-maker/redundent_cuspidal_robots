@@ -127,7 +127,7 @@ def plot_workspace(robot, grid_size=300):
             marker="x",
             markersize=10,
             linestyle="None",
-            label=fr"$q_{{index}}$"
+            label=fr"$q_{{{index}}}$"
             )
 
     # plot the paths connecting q2 and q3 in workspace
