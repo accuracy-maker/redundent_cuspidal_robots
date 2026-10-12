@@ -34,12 +34,13 @@ robot = rtb.DHRobot(
 print(robot)
 
 # exmaple: forward kinematics
+q0 = np.array([0.0, 0.0, 0.0])
 q1 = np.array([-1.8, -2.8, 1.9])
 q2 = np.array([-0.9, -0.7, 2.5])
 q3 = np.array([-2.9, -3, -0.2])
 q4 = np.array([0.2, -0.3, -1.9])
 
-T = robot.fkine(q1)
+T = robot.fkine(q0)
 
 print(f"end-effector pose:\n {T}")
 print("Position:", T.t)
@@ -51,7 +52,7 @@ print("Rotation:\n", T.R)
 # print(f"Geometric Jacobian Matrix:\n {J}")
 
 robot.plot(
-    q1,
+    q0,
     block=True,
     backend="pyplot",
 )
