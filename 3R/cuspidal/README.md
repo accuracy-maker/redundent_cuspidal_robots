@@ -18,3 +18,14 @@ This figure shows that there are four IK solutions for the same target poses whe
 ![config-space](/figures/workspace.png)
 
 This figure shows that workspace of this cuspidal 3R robot where real line is the boundaries. The outter boundary is the maximum workspace boundaries. The inner boundary is the due to the inner singularity. The red dashed line is the workspace path when $q_2$ transfers to $q_3$ as a straight line.
+
+## Path Tracing
+Cuspidal robot has path planning issue because of the non-singular transition between different IK solutions. Some paths the robot might just trace once. One example is the this path as shown below:
+
+![3d_param1](/figures/3d_params2.png)
+
+When the robot trace the loop and goes back to the origin, the posture are not recovered and goes to another different IK solution in the same aspect as shown here:
+
+![3d_param1](/figures/3d_params1.png)
+
+Therefore, it is no way the robot can repeatly follow this path.
