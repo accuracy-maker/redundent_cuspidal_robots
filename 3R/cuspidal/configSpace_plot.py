@@ -64,6 +64,15 @@ def plot_configSpace(robot):
     plt.figure(figsize=(8, 7))
 
     # Singularity set
+    plt.contourf(
+        Q2,
+        Q3,
+        det_values,
+        levels=[-np.inf, 0.0, np.inf],
+        colors=["green", "blue"],
+        alpha=0.85,
+    )
+
     plt.contour(
         Q2,
         Q3,
