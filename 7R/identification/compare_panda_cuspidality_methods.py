@@ -1576,7 +1576,7 @@ def build_argument_parser() -> argparse.ArgumentParser:
     parser.add_argument("--lift-radius", type=int, default=1)
     parser.add_argument("--linear-cert-depth", type=int, default=16)
     parser.add_argument("--no-linear-certificate", action="store_true")
-    parser.add_argument("--gcs-depth", type=int, default=9)
+    parser.add_argument("--gcs-depth", type=int, default=10)
     parser.add_argument("--det-margin", type=float, default=1e-7)
     parser.add_argument("--target-det-margin", type=float, default=1e-4)
     parser.add_argument("--validation-samples", type=int, default=50)
